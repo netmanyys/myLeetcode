@@ -4,19 +4,20 @@
 # [167] Two Sum II - Input Array Is Sorted
 #
 
-# @lc code=start
+
 class Solution(object):
     def twoSum(self, numbers, target):
-        pair = {}
+        mydict = {}
         for i,v in enumerate(numbers):
-            pair[v] = i
+            mydict[v] = i
         for i in range(len(numbers)):
-            if target - numbers[i] in pair:
-                tarI = pair[target-numbers[i]]
-                if tarI > i:
-                    return [i+1, tarI+1]
+            if target - numbers[i] in mydict:
+                tar1 = mydict[target - numbers[i]]
+                if i > tar1:
+                    return (tar1+1, i+1)
                 else:
-                    return [tarI+1, i+1]
+                    return (i+1, tar1+1)
+
 
 # @lc code=end
 
