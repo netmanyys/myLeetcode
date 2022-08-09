@@ -15,6 +15,9 @@ class Solution:
                 if mydict[(target - num)] == index:
                     continue
                 else:
-                    return(index, mydict[(target-num)]) 
+                    if index <= mydict[(target-num)]:
+                        return [index, mydict[(target-num)]]
+                    else:
+                        return [mydict[(target-num)], index]
 # @lc code=end
 
